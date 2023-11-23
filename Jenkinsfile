@@ -9,8 +9,7 @@ pipeline {
                 docker --version
                 docker-compose --version
                 java --version
-                jenkins --version
-                
+
                 '''
             }
         }
