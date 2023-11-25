@@ -1,15 +1,14 @@
-pipeline {
-    agent agent
+pipeline{
+    
+    agent any
 
-    stages {
-        stage('Build TADS') {
-            steps {
+    stages{
+        stage('Build TADS'){
+            steps{
                 sh '''
-
                 docker --version
-                docker-compose --version
                 java --version
-
+                docker info
                 '''
             }
         }
