@@ -6,25 +6,23 @@ pipeline {
     stages {
         stage('INSTALL'){
             steps{
-                sh '''
-                npm install
-                '''
+                sh 'npm install'
             }
         }
-//         stage('test'){
-//             steps{
-//                 sh 'npm test'
-//             }
-//         }
-//         stage('build') {
-//             steps {
-//                 sh 'docker build -t trabalho .' 
-//             }
-//         }
-//          stage('up') {
-//             steps {
-//                 sh 'docker compose up'  
-//             }
+//         // stage('test'){
+//         //     steps{
+//         //         sh 'npm test'
+//         //     }
+//         // }
+//         // stage('build') {
+//         //     steps {
+//         //         sh 'docker build -t trabalho .' 
+//         //     }
+//         // }
+//         //  stage('up') {
+//         //     steps {
+//         //         sh 'docker compose up'  
+//         //     }
 //         }
     }
 }
