@@ -42,6 +42,6 @@ pipeline{
                 docker-compose up
                 '''
             }
-        }
-    }
+        }
+    }
 }
