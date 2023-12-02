@@ -7,21 +7,21 @@ pipeline{
         stage('Start NodeGoat') {
             steps {
                 sh '''
-                    npm install
+                npm install
                 '''
             }
         }
         stage('Test NPM') {
             steps {
                 sh '''
-                    npm test
+                npm test
                 '''
             }
         }
         stage('Construindo Docker') {
             steps {
                 sh '''
-                    docker-compose build
+                docker-compose build
                 '''
             }
         }
@@ -30,10 +30,8 @@ pipeline{
             steps {
                 echo 'Testing'
                 sh '''
-                    npm install
-                '''
-                  sh '''
-                    npm test
+                npm install
+                npm test
                 '''
             }
         }
@@ -41,7 +39,7 @@ pipeline{
             steps {
                 echo 'Deploy'
                 sh '''
-                    docker-compose up
+                docker-compose up
                 '''
             }
         }
