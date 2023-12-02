@@ -1,35 +1,24 @@
-pipeline{
-    
+pipeline {
     agent any
 
-    stages{
-        stage('start NodeGoat'){
-            steps{
-                sh '''
-                npm install
-                '''
-            }
-        }
+    tools {nodejs 'node'}
+
+    stages {
         stage('test'){
             steps{
-                sh'''
-                npm test
-                '''
+                sh 'npm install'
+                sh 'npm test'
             }
         }
-        stage('docker building'){
-            steps{
-                sh'''
-                docker build
-                '''
+        stage('build') {
+            steps {
+                sh 'docker-compose build' 
             }
         }
-        stage('rodar o projeto'){
-            steps{
-                sh'''
-                docker compose up
-                '''
-            }
-        }
-    }
+         stage('up') {
+            steps {
+                sh 'docker-compose up'  
+            }
+        }
+}
 }
