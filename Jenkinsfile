@@ -16,7 +16,7 @@ pipeline {
         }
         stage('build') {
             steps {
-                sh 'docker-compose build' 
+                sh 'docker build -t trabalho .' 
             }
         }
          stage('up') {
