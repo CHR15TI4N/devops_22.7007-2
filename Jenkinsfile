@@ -3,18 +3,31 @@ pipeline{
     agent any
 
     stages{
-        stage('test'){
+        stage('start NodeGoat'){
             steps{
                 sh '''
                 npm install
+                '''
+            }
+        }
+        stage('test'){
+            steps{
+                sh'''
                 npm test
                 '''
             }
         }
-        stage('build'){
+        stage('docker building'){
             steps{
                 sh'''
-                docker-compose build
+                docker build
+                '''
+            }
+        }
+        stage('rodar o projeto'){
+            steps{
+                sh'''
+                docker compose up
                 '''
             }
         }
