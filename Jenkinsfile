@@ -4,9 +4,13 @@ pipeline {
     tools {nodejs 'node'}
 
     stages {
-        stage('test'){
+        stage('INSTALL'){
             steps{
                 sh 'npm install'
+            }
+        }
+        stage('test'){
+            steps{
                 sh 'npm test'
             }
         }
@@ -20,5 +24,5 @@ pipeline {
                 sh 'docker-compose up'  
             }
         }
-}
+    }
 }
